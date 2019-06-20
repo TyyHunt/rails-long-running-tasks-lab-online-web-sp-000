@@ -6,8 +6,8 @@ require 'csv'
   end
 
   def upload
-    CSV.foreach(params[:file].path, headers:true) do |file|
-      Song.create(song: file[0], artist: file[1])
+    CSV.foreach(params[:file].path, headers: true) do |file|
+      Song.create(title: file[0], artist: file[1])
     end
     redirect_to songs_path
   end
